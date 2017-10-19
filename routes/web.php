@@ -30,7 +30,7 @@ Route::get('/budget/{id}/category/create', 'CategoryController@create')->name('c
 Route::post('/category/store', 'CategoryController@store')->name('category.store');
 Route::get('/category/{id}/edit', 'CategoryController@edit')->name('category.edit');
 Route::post('/category/{id}/update', 'CategoryController@update')->name('category.update');
-Route::get('/category/{id}/destroy', 'CategoryController@destroy')->name('category.destroy');
+Route::post('/category/{id}', 'CategoryController@destroy')->name('category.destroy');
 Route::post('/category/copy', 'CategoryController@copy')->name('category.copy');
 
 Route::get('/category/{id}/expense/create', 'ExpenseController@create')->name('expense.create');

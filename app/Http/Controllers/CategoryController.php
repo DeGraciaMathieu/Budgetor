@@ -35,7 +35,12 @@ class CategoryController extends Controller
     {
         $category = Models\Category::create($request->only(['name', 'amount', 'budget_id']));
 
-        return redirect()->route('budget.show', [$request->get('budget_id')]);
+        return response()->json(
+            $category->only(['id','name','amount']) + 
+            [
+                'link_edit' => route('category.edit', [$category->id])
+            ]
+        );
     }        
 
     public function edit(Request $request, $id)
