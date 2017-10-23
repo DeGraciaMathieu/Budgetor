@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands\User;
 
+use Hash;
 use App\User;
 use Exception;
 use Illuminate\Console\Command;
@@ -44,7 +45,11 @@ class Create extends Command
         $email = $this->ask('What is the email?');
 
         try {
-            User::create(['name' => $name, 'password' => $password, 'email' => $email]);
+            User::create([
+                'name' => $name, 
+                'password' => Hash::make($password), 
+                'email' => $email
+            ]);
             $this->info("Création de l'utilisateur " . $name);
         } catch (Exception $e) {
             $this->error("Error lors de la creation de l'utilisateur");
