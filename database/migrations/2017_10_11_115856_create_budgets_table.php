@@ -10,7 +10,6 @@ class CreateBudgetsTable extends Migration {
 		Schema::create('budgets', function(Blueprint $table) {
 			$table->increments('id');
 			$table->text('name');
-			$table->integer('amount');
 			$table->timestamp('started_at');
 			$table->timestamp('ended_at');
 			$table->softDeletes();

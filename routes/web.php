@@ -11,6 +11,8 @@
 |
 */
 
+Route::view('test', 'pages.home');
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -39,3 +41,7 @@ Route::get('/expense/{id}/edit', 'ExpenseController@edit')->name('expense.edit')
 
 Route::post('/expense/{id}', 'ExpenseController@destroy')->name('expense.destroy');
 
+
+
+
+Route::get('api/budget/all', 'Api\BudgetController@all');

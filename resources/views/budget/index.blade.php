@@ -59,9 +59,31 @@
                     </table>    
                 @endif                
                 </div>
-                <div class="panel-footer"><a href='{{route('budget.create')}}' class="btn btn-primary">Créer un budget</a></div>
+                <div class="panel-footer">
+                    <button type="button" class="btn btn-primary btn-sd" data-toggle="modal" data-target="#store-expense">Créer un budget</button>
+                </div>                
+                <!-- <div class="panel-footer"><a href='{{route('budget.create')}}' class="btn btn-primary">Créer un budget</a></div> -->
             </div>
         </div>
     </div>
 </div>
+
+
+<div id='app'>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">    
+                <list-budgets></list-budgets>
+            </div>
+        </div>
+    </div>    
+    <modal-create-budget></modal-create-budget>
+</div>
+
+<script>
+new Vue({
+    el: '#app',
+});
+</script>
+
 @endsection
