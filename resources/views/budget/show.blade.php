@@ -21,7 +21,7 @@
                             </tr>
                             <tr>
                                 <th>amount</th>
-                                <td>{{$budget->amount}}</td>
+                                <td>{{$budget->categories()->sum('amount')}} €</td>
                             </tr>
                             <tr>
                                 <th>started_at</th>
