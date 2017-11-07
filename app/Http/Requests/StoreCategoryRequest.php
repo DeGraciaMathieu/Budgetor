@@ -25,7 +25,7 @@ class StoreCategoryRequest extends FormRequest
     {
         return [
             'name' => 'required|string',
-            'amount' => 'required|integer',
+            'amount' => 'required|numeric',
             'budget_id' => 'required|exists:budgets,id',
         ];
     }

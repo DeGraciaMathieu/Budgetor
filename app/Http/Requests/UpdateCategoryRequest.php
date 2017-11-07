@@ -25,7 +25,7 @@ class UpdateCategoryRequest extends FormRequest
     {
         return [
             'name' => 'required|string',
-            'amount' => 'required|integer',
+            'amount' => 'required|numeric',
         ];
     }
 }

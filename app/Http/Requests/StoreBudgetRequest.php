@@ -25,7 +25,7 @@ class StoreBudgetRequest extends FormRequest
     {
         return [
             'name' => 'required|string',
-            'amount' => 'required|integer',
+            'amount' => 'required|numeric',
             'started_at' => 'required|date',
             'ended_at' => 'required|date'
         ];
