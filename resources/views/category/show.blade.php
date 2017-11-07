@@ -25,7 +25,7 @@
                         <tbody>
                         @foreach($expenses as $expense)
                         <tr>
-                            <td><a href='{{route('category.show', $category->id)}}'>{{$expense->name}}</a></td>
+                            <td><a href='{{route('expense.edit', $expense->id)}}'>{{$expense->name}}</a></td>
                             <td>{{$expense->amount}}</td>
                             <td>{{$expense->paid_at->format('Y-m-d')}}</td>
                             <td class='align-right'>

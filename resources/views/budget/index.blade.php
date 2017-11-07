@@ -36,7 +36,7 @@
                         @foreach($budgets as $budget)
                         <tr>
                             <td><a href='{{route('budget.show', $budget->id)}}'>{{$budget->name}}</a></td>
-                            <td>{{$budget->amount}}</td>
+                            <td>{{$budget->categories()->sum('amount')}}</td>
                             <td>{{$budget->started_at}}</td>
                             <td>{{$budget->ended_at}}</td>
                             <td>

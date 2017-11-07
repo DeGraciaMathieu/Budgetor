@@ -11,7 +11,7 @@
               <li><a href="{{route('category.show', [$category->id])}}">{{$category->name}}</a></li>
               <li class="active">Edition d'une depense</li>
             </ol>
-            <form role="form" method="post" action='{{route('expense.store')}}'>
+            <form role="form" method="post" action='{{route('expense.update', $expense->id)}}'>
                 <input type='hidden' name='expense_id' value='{{$expense->id}}'>
                 <div class="panel panel-default">
                     <div class="panel-heading">Editer une depense</div>

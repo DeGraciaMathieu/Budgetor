@@ -52,7 +52,7 @@ class ExpenseController extends Controller
 
         $category->save();
 
-        return redirect()->route('category.edit', ['category' => $category])->with(['success' => 'Category update']);
+        return redirect()->route('expense.edit', ['category' => $category])->with(['success' => 'Category update']);
     }       
 
     public function destroy(Requests\DestroyExpenseRequest $request, $id)

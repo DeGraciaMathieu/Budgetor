@@ -25,6 +25,7 @@ class UpdateBudgetRequest extends FormRequest
     {
         return [
             'name' => 'required|string',
+            'amount' => 'required|numeric',
             'started_at' => 'required|date',
             'ended_at' => 'required|date'
         ];
