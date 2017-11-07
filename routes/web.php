@@ -36,6 +36,6 @@ Route::post('/category/copy', 'CategoryController@copy')->name('category.copy');
 Route::get('/category/{id}/expense/create', 'ExpenseController@create')->name('expense.create');
 Route::post('/expense/store', 'ExpenseController@store')->name('expense.store');
 Route::get('/expense/{id}/edit', 'ExpenseController@edit')->name('expense.edit');
-
+Route::post('/expense/{id}/update', 'ExpenseController@update')->name('expense.update');
 Route::post('/expense/{id}', 'ExpenseController@destroy')->name('expense.destroy');
 
