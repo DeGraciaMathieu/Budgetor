@@ -1,7 +1,5 @@
 <template>
-<div class="panel panel-default">
-    <div class="panel-heading">Liste des budgets</div>
-    <div class="panel-body">
+<div>
     <table class="table table-striped">
         <thead>
             <tr>
@@ -14,44 +12,26 @@
             </tr>
         </thead>
         <tbody>
-            <tr v-for="budget in budgets">
-                <td>{{ budget.name }}</td>
-                <td></td>
-                <td>{{ budget.started_at }}</td>
-                <td>{{ budget.ended_at }}</td>
-                <td></td>
-                <td></td>
-            </tr>
+        <tr v-for="budget in budgets">
+            <td><a href='#'>{{ budget.name }}</a></td>
+            <td>{{ budget.amount }} €</td>
+            <td>{{ budget.started_at }}</td>
+            <td>{{ budget.ended_at }}</td>
+            <td>
+            </td>
+            <td></td>
+        </tr>
         </tbody>
-    </table>    
-    </div>
-    <div class="panel-footer">
-        <button type="button" class="btn btn-primary btn-sd" data-toggle="modal" data-target="#store-expense">Créer un budget</button>
-    </div>                
+    </table>   
 </div>
 </template>
 
 <script>
-import axios from 'axios';
 export default {
+	props: ['budgets'],
     data(){
         return{
-            budgets: [],
         }
-    },    
-    created: function()
-    {
-        this.fetchData();
-    },
-    methods: {
-        fetchData: function()
-        {
-            axios.get(`/api/budget/all`).then(response => {
-                this.budgets = response.data.budgets;
-            })
-            .catch(e => {
-            });
-        },
-    },
+    },     
 }
 </script>

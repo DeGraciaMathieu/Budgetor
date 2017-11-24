@@ -17,9 +17,22 @@ class BudgetController extends Controller
     {
         $budgets = Models\Budget::orderBy('created_at', 'desc')->get();
 
+        $budgets = $budgets->map(function($budget){
+
+            return [
+                'amount' => $budget->categories->sum('amount')
+            ] + $budget->toArray();
+
+        });
+
         // return with interface
         // $budgets = app('Services\Budget')->all();
 
-        return response()->json(['budgets' => $tmp]);
-    }       
+        return response()->json(['budgets' => $budgets]);
+    }   
+
+    public function create(Request $request)
+    {
+        return response()->json([]);
+    }           
 }

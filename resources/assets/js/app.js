@@ -15,10 +15,13 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('modal-create-expense', require('./components/ModalCreateExpense.vue'));
-Vue.component('notification', require('./components/Notification.vue'));
+// Vue.component('modal-create-expense', require('./components/ModalCreateExpense.vue'));
+// Vue.component('notification', require('./components/Notification.vue'));
 
 Vue.component('modal-create-budget', require('./components/ModalCreateBudget.vue'));
+Vue.component('test', require('./components/test.vue'));
+// Vue.component('list-budgets', require('./components/ListBudgets.vue'));
+
 Vue.component('list-budgets', require('./components/ListBudgets.vue'));
 
 
