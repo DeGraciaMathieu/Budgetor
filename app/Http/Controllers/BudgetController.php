@@ -71,5 +71,5 @@ class BudgetController extends Controller
         $budget->delete();
 
         return redirect()->route('budget.index');
-    }       
+    }          
 }
