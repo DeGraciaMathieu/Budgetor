@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Models;
 use App\Http\Requests;
+use App\Http\Responses\Api;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -18,14 +19,14 @@ class BudgetController extends Controller
     {
         $budgets = Models\Budget::orderBy('created_at', 'desc')->get();
 
-        return Api\AllBudgetsResponse($budgets);
+        return new Api\AllBudgetsResponse($budgets);
     }   
 
     public function create(Requests\StoreBudgetRequest $request)
     {
         Models\Budget::create($request->only(['name', 'started_at', 'ended_at']));
 
-        return Api\BasicResponse('success');
+        return new Api\BasicResponse('success');
     }  
 
     public function destroy(Requests\DestroyBudgetRequest $request, $id)
@@ -38,6 +39,6 @@ class BudgetController extends Controller
 
         $budget->delete();
 
-        return Api\BasicResponse('success');
+        return new Api\BasicResponse('success');
     }         
 }
