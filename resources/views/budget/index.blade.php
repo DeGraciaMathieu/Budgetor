@@ -27,7 +27,7 @@ new Vue({
         fetchData: function()
         {
             axios.get(`/api/budget/all`).then(response => {
-                this.budgets = response.data.budgets;
+                this.budgets = response.data;
             })
             .catch(e => {});
         },
