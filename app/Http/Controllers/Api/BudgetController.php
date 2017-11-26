@@ -23,7 +23,7 @@ class BudgetController extends Controller
 
     public function create(Requests\StoreBudgetRequest $request)
     {
-        Models\Budget::create($request->only(['name', 'amount', 'started_at', 'ended_at']));
+        Models\Budget::create($request->only(['name', 'started_at', 'ended_at']));
 
         return Api\BasicResponse('success');
     }  
