@@ -2,14 +2,13 @@
 
 namespace App\Http\Responses\Api;
 
-use App\Models;
 use Illuminate\Contracts\Support\Responsable;
 
 class AllBudgetsResponse implements Responsable
 {
     protected $budgets;
 
-    public function __construct(Models\Budget $budgets)
+    public function __construct($budgets)
     {
         $this->budgets = $budgets;
     }
@@ -25,6 +24,6 @@ class AllBudgetsResponse implements Responsable
             return [
                 'amount' => $budget->categories->sum('amount')
             ] + $budget->toArray();
-        });
+        })->toArray();
     }
 }
