@@ -4,7 +4,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="store-expense-label">Créer une depense</h4>
+                <h4 class="modal-title" id="store-expense-label">Créer un budget</h4>
             </div>
             <form v-on:submit.prevent="onSubmit" id='store_expense' role="form" method="post" action='http://budget.dev/expense/store'>
                 <input type='hidden' name='category_id' value='1'>
@@ -17,26 +17,27 @@
                     <div id='name' class="form-group">
                         <label>name</label>
                         <input v-model="budget.name" class="form-control">
-                        <span class="text-danger"></span>
+                        <span v-if="errors.name" class="text-danger">{{ errors.name }}</span>
                         <p class="help-block"></p>
                     </div>                    
                     <div id='amount' class="form-group">
                         <label>amount</label>
                         <input v-model="budget.amount" class="form-control">
-                        <span class="text-danger"></span>
+                        <span v-if="errors.amount" class="text-danger">{{ errors.amount }}</span>
                         <p class="help-block"></p>
                     </div>                    
-                    <div id='paid_at' class="form-group">
-                        <label>paid_at</label>
+                    <div id='started_at' class="form-group">
+                        <label>started_at</label>
                         <input v-model="budget.started_at" class="form-control">
-                        <span class="text-danger"></span>
+                        <span v-if="errors.started_at" class="text-danger">{{ errors.started_at }}</span>
                         <p class="help-block"></p>
-                    </div>                 
-                    <div class="form-group">
-                        <label>comment</label>
-                        <textarea v-model="budget.comment" class="form-control" ></textarea>
+                    </div>  
+                    <div id='ended_at' class="form-group">
+                        <label>ended_at</label>
+                        <input v-model="budget.ended_at" class="form-control">
+                        <span v-if="errors.ended_at" class="text-danger">{{ errors.ended_at }}</span>
                         <p class="help-block"></p>
-                    </div>                
+                    </div>                                   
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -53,7 +54,7 @@ export default {
     data(){
         return{
             budget: {},
-            errors: [],
+            errors: {},
         }
     },     
     methods: {
@@ -63,9 +64,14 @@ export default {
             .then(response => {
                 this.budgets.push(this.budget);
             })
-            .catch(e => {
-                this.errors.push(1);
+            .catch(error => {
+                       /* console.log(error.response.data);
+                        console.log(error.response.status);
+                        console.log(error.response.headers);  */              
+                this.errors = error.response.data.errors;
             })
+
+            console.log(this.errors.name);
         }
     }
 }
