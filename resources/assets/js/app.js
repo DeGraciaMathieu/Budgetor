@@ -18,11 +18,11 @@ window.Vue = require('vue');
 // Vue.component('modal-create-expense', require('./components/ModalCreateExpense.vue'));
 // Vue.component('notification', require('./components/Notification.vue'));
 
-Vue.component('modal-create-budget', require('./components/ModalCreateBudget.vue'));
-Vue.component('test', require('./components/test.vue'));
+Vue.component('modals-create-budget', require('./components/modals/create-budget.vue'));
 // Vue.component('list-budgets', require('./components/ListBudgets.vue'));
 
-Vue.component('list-budgets', require('./components/ListBudgets.vue'));
+Vue.component('list-budgets', require('./components/list-budgets.vue'));
+Vue.component('panels-budgets', require('./components/panels/budgets.vue'));
 
 
 // window.onload = function () {
