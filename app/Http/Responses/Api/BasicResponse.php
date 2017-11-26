@@ -17,11 +17,11 @@ class BasicResponse implements Responsable
 
     public function toResponse($request)
     {
-        return response()->json($this->transformDatas(), $code);
+        return response()->json($this->transformDatas(), $this->code);
     }
 
     protected function transformDatas() :array
     {
-        return ['message' = $this->message];
+        return ['message' => $this->message];
     }
 }
