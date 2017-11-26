@@ -19,13 +19,7 @@
                         <input v-model="budget.name" class="form-control">
                         <span v-if="errors.name" class="text-danger">{{ errors.name }}</span>
                         <p class="help-block"></p>
-                    </div>                    
-                    <div id='amount' class="form-group">
-                        <label>amount</label>
-                        <input v-model="budget.amount" class="form-control">
-                        <span v-if="errors.amount" class="text-danger">{{ errors.amount }}</span>
-                        <p class="help-block"></p>
-                    </div>                    
+                    </div>                                       
                     <div id='started_at' class="form-group">
                         <label>started_at</label>
                         <input v-model="budget.started_at" class="form-control">
