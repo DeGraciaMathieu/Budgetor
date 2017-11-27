@@ -2,7 +2,7 @@
 
 @section('content')
 <div id='app'>
-    <pages-list-budgets></pages-list-budgets>
+    <pages-show-budget></pages-show-budget>  
 </div>
 <script>
 new Vue({

@@ -26,6 +26,8 @@ Vue.component('panels-budgets', require('./components/panels/budgets.vue'));
 Vue.component('panels-categories', require('./components/panels/categories.vue'));
 Vue.component('panels-info-budget', require('./components/panels/infos-budget.vue'));
 
+Vue.component('pages-list-budgets', require('./pages/list-budgets.vue'));
+Vue.component('pages-show-budget', require('./pages/show-budget.vue'));
 
 // window.onload = function () {
 // 	const app = new Vue({
