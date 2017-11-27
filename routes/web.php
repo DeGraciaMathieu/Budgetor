@@ -46,3 +46,4 @@ Route::post('/expense/{id}', 'ExpenseController@destroy')->name('expense.destroy
 
 Route::get('api/budget/all', 'Api\BudgetController@all');
 Route::post('api/budget/create', 'Api\BudgetController@create');
+Route::get('api/budget/{id}', 'Api\BudgetController@show');

@@ -23,6 +23,7 @@ Vue.component('modals-create-budget', require('./components/modals/create-budget
 
 Vue.component('list-budgets', require('./components/list-budgets.vue'));
 Vue.component('panels-budgets', require('./components/panels/budgets.vue'));
+Vue.component('panels-info-budget', require('./components/panels/infos-budget.vue'));
 
 
 // window.onload = function () {

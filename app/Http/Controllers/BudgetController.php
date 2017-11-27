@@ -18,31 +18,20 @@ class BudgetController extends Controller
 
     public function index()
     {
-    	$budgets = Models\Budget::orderBy('created_at', 'desc')->get();
-
-        return new Web\IndexBudgetResponse($budgets);   
+        return view('budget.index');   
     } 
 
-    public function show(Request $request, $id)
+    public function show(Request $request)
     {
-    	$budget = Models\Budget::findOrFail($id);
+        return view('budget.show');
+    }
 
-        return new Web\ShowBudgetResponse($budget);           
-    } 
-
-    public function create(Request $request)
+    public function edit(Request $request)
     {
-        return new Web\CreateBudgetResponse();           
-    } 
-
-    public function edit(Request $request, $id)
-    {
-        $budget = Models\Budget::findOrFail($id);
-
-        return new Web\EditBudgetResponse($budget);          
-    }   
+        return view('budget.edit');
+    }     
           
-    public function store(Requests\StoreBudgetRequest $request)
+/*    public function store(Requests\StoreBudgetRequest $request)
     {
         $budget = Models\Budget::create($request->only(['name', 'amount', 'started_at', 'ended_at']));
 
@@ -71,5 +60,5 @@ class BudgetController extends Controller
         $budget->delete();
 
         return redirect()->route('budget.index');
-    }          
+    }*/          
 }

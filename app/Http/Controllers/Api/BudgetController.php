@@ -41,4 +41,11 @@ class BudgetController extends Controller
 
         return new Api\BasicResponse('success');
     }         
+
+    public function show(Request $request, $id)
+    {
+        $budget = Models\Budget::findOrFail($id);
+
+        return new Api\ShowBudgetResponse($budget);
+    }
 }

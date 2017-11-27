@@ -46,7 +46,14 @@
 </div>
 
 <div id='app'>
-    <modal-create-expense :category_id={{$category->id}}></modal-create-expense>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">        
+                <panel-infos-budget :budget="budget"></panel-infos-budget>
+            </div>
+        </div>
+    </div>
+<modals-create-budget :budgets="budgets"></modals-create-budget>    
 </div>
 
 <script>
@@ -54,5 +61,4 @@ new Vue({
     el: '#app',
 });
 </script>
-
 @endsection
