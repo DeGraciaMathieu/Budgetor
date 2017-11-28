@@ -1072,7 +1072,7 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(11);
-module.exports = __webpack_require__(51);
+module.exports = __webpack_require__(60);
 
 
 /***/ }),
@@ -1104,11 +1104,11 @@ Vue.component('modals-create-budget', __webpack_require__(39));
 
 Vue.component('list-budgets', __webpack_require__(42));
 Vue.component('panels-budgets', __webpack_require__(45));
-Vue.component('panels-categories', __webpack_require__(66));
-Vue.component('panels-info-budget', __webpack_require__(48));
+Vue.component('panels-categories', __webpack_require__(48));
+Vue.component('panels-info-budget', __webpack_require__(51));
 
-Vue.component('pages-list-budgets', __webpack_require__(69));
-Vue.component('pages-show-budget', __webpack_require__(72));
+Vue.component('pages-list-budgets', __webpack_require__(54));
+Vue.component('pages-show-budget', __webpack_require__(57));
 
 // window.onload = function () {
 // 	const app = new Vue({
@@ -43523,170 +43523,6 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\assets\\js\\components\\panels\\infos-budget.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-20630cd3", Component.options)
-  } else {
-    hotAPI.reload("data-v-20630cd3", Component.options)
-' + '  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 49 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['budget'],
-    data: function data() {
-        return {};
-    }
-});
-
-/***/ }),
-/* 50 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "panel panel-default" }, [
-    _c("div", { staticClass: "panel-heading" }, [
-      _vm._v("Informations budget")
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "panel-body" }, [
-      _c("table", { staticClass: "table table-bordered table-striped" }, [
-        _c("tbody", [
-          _c("tr", [
-            _c("th", [_vm._v("name")]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(_vm.budget.name))])
-          ]),
-          _vm._v(" "),
-          _c("tr", [
-            _c("th", [_vm._v("amount")]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(_vm.budget.amount))])
-          ]),
-          _vm._v(" "),
-          _c("tr", [
-            _c("th", [_vm._v("started_at")]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(_vm.budget.started_at))])
-          ]),
-          _vm._v(" "),
-          _c("tr", [
-            _c("th", [_vm._v("ended_at")]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(_vm.budget.ended_at))])
-          ])
-        ])
-      ])
-    ])
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-20630cd3", module.exports)
-  }
-}
-
-/***/ }),
-/* 51 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 52 */,
-/* 53 */,
-/* 54 */,
-/* 55 */,
-/* 56 */,
-/* 57 */,
-/* 58 */,
-/* 59 */,
-/* 60 */,
-/* 61 */,
-/* 62 */,
-/* 63 */,
-/* 64 */,
-/* 65 */,
-/* 66 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(67)
-/* template */
-var __vue_template__ = __webpack_require__(68)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
 Component.options.__file = "resources\\assets\\js\\components\\panels\\categories.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
 
@@ -43710,7 +43546,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 67 */
+/* 49 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -43756,7 +43592,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 68 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -43843,15 +43679,159 @@ if (false) {
 }
 
 /***/ }),
-/* 69 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(70)
+var __vue_script__ = __webpack_require__(52)
 /* template */
-var __vue_template__ = __webpack_require__(71)
+var __vue_template__ = __webpack_require__(53)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\panels\\infos-budget.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-20630cd3", Component.options)
+  } else {
+    hotAPI.reload("data-v-20630cd3", Component.options)
+' + '  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 52 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['budget'],
+    data: function data() {
+        return {};
+    }
+});
+
+/***/ }),
+/* 53 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "panel panel-default" }, [
+    _c("div", { staticClass: "panel-heading" }, [
+      _vm._v("Informations budget")
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "panel-body" }, [
+      _c("table", { staticClass: "table table-bordered table-striped" }, [
+        _c("tbody", [
+          _c("tr", [
+            _c("th", [_vm._v("name")]),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(_vm.budget.name))])
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("th", [_vm._v("amount")]),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(_vm.budget.amount))])
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("th", [_vm._v("started_at")]),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(_vm.budget.started_at))])
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("th", [_vm._v("ended_at")]),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(_vm.budget.ended_at))])
+          ])
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-20630cd3", module.exports)
+  }
+}
+
+/***/ }),
+/* 54 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(55)
+/* template */
+var __vue_template__ = __webpack_require__(56)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -43891,7 +43871,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 70 */
+/* 55 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -43932,7 +43912,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 71 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -43969,15 +43949,15 @@ if (false) {
 }
 
 /***/ }),
-/* 72 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(73)
+var __vue_script__ = __webpack_require__(58)
 /* template */
-var __vue_template__ = __webpack_require__(74)
+var __vue_template__ = __webpack_require__(59)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -44017,7 +43997,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 73 */
+/* 58 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -44062,7 +44042,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 74 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -44108,6 +44088,12 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-3ff6e1e4", module.exports)
   }
 }
+
+/***/ }),
+/* 60 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);
