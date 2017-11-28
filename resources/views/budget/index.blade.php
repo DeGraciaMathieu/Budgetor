@@ -10,7 +10,7 @@
                   <li><a href="#">Budgets</a></li>
                   <li class="active">@{{ budget.name }}</li>
                 </ol>
-                <panels-info-budget :budget="budget"></panels-info-budget>
+                <panels-info-budget :budget="budget" :categories="categories"></panels-info-budget>
                 <panels-categories :categories="categories"></panels-categories>
                 <modals-create-category :budget="budget" :categories="categories"></modals-create-category>
             </div>

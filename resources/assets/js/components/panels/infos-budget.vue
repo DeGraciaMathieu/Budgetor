@@ -10,7 +10,7 @@
                 </tr>
                 <tr>
                     <th>amount</th>
-                    <td>{{ budget.amount }}</td>
+                    <td>{{ allAmount }}</td>
                 </tr>
                 <tr>
                     <th>started_at</th>
@@ -28,10 +28,19 @@
 
 <script>
 export default {
-	props: ['budget'],
+	props: ['budget', 'categories'],
     data(){
         return{
         }
     },
+    computed: {
+        allAmount: function () {
+            var amount = 0;
+            for (var i = this.categories.length - 1; i >= 0; i--) {
+                amount = amount + parseInt(this.categories[i].amount);
+            }
+            return amount;
+        }
+    }     
 }
 </script>

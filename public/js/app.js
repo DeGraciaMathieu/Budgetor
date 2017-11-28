@@ -43789,9 +43789,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['budget'],
+    props: ['budget', 'categories'],
     data: function data() {
         return {};
+    },
+
+    computed: {
+        allAmount: function allAmount() {
+            var amount = 0;
+            for (var i = this.categories.length - 1; i >= 0; i--) {
+                amount = amount + parseInt(this.categories[i].amount);
+            }
+            return amount;
+        }
     }
 });
 
@@ -43820,7 +43830,7 @@ var render = function() {
           _c("tr", [
             _c("th", [_vm._v("amount")]),
             _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(_vm.budget.amount))])
+            _c("td", [_vm._v(_vm._s(_vm.allAmount))])
           ]),
           _vm._v(" "),
           _c("tr", [
