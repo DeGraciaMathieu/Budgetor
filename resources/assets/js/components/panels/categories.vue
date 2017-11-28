@@ -4,7 +4,7 @@
     <div class="panel-body">
         <div v-if="categories.length == 0">
             <div class="alert alert-info">
-              <strong>Info!</strong> qdqd qdq dq qd .
+              <strong>Info!</strong> Aucune categorie.
             </div>
         </div> 
         <div v-else>
@@ -19,7 +19,13 @@
                     </tr>
                 </thead>
                 <tbody>
-
+                    <tr v-for="category in categories">
+                        <td>{{ category.name }}</td>
+                        <td>{{ category.amount }}</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
                 </tbody>
             </table> 
         </div>    

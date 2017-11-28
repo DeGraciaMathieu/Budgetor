@@ -43584,6 +43584,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['categories'],
@@ -43608,7 +43614,35 @@ var render = function() {
     _c("div", { staticClass: "panel-body" }, [
       _vm.categories.length == 0
         ? _c("div", [_vm._m(0, false, false)])
-        : _c("div", [_vm._m(1, false, false)])
+        : _c("div", [
+            _c(
+              "table",
+              {
+                staticClass: "table table-striped",
+                attrs: { id: "categories" }
+              },
+              [
+                _vm._m(1, false, false),
+                _vm._v(" "),
+                _c(
+                  "tbody",
+                  _vm._l(_vm.categories, function(category) {
+                    return _c("tr", [
+                      _c("td", [_vm._v(_vm._s(category.name))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(category.amount))]),
+                      _vm._v(" "),
+                      _c("td"),
+                      _vm._v(" "),
+                      _c("td"),
+                      _vm._v(" "),
+                      _c("td")
+                    ])
+                  })
+                )
+              ]
+            )
+          ])
     ]),
     _vm._v(" "),
     _vm._m(2, false, false)
@@ -43621,34 +43655,26 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "alert alert-info" }, [
       _c("strong", [_vm._v("Info!")]),
-      _vm._v(" qdqd qdq dq qd .\r\n            ")
+      _vm._v(" Aucune categorie.\r\n            ")
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "table",
-      { staticClass: "table table-striped", attrs: { id: "categories" } },
-      [
-        _c("thead", [
-          _c("tr", [
-            _c("th", [_vm._v("name")]),
-            _vm._v(" "),
-            _c("th", [_vm._v("amount")]),
-            _vm._v(" "),
-            _c("th", [_vm._v("spent")]),
-            _vm._v(" "),
-            _c("th", [_vm._v("completion")]),
-            _vm._v(" "),
-            _c("th")
-          ])
-        ]),
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("name")]),
         _vm._v(" "),
-        _c("tbody")
-      ]
-    )
+        _c("th", [_vm._v("amount")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("spent")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("completion")]),
+        _vm._v(" "),
+        _c("th")
+      ])
+    ])
   },
   function() {
     var _vm = this
@@ -44204,7 +44230,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['categories'],
+    props: ['budget', 'categories'],
     data: function data() {
         return {
             category: {},
@@ -44216,7 +44242,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         onSubmit: function onSubmit() {
             var _this = this;
 
-            axios.post('/api/category/create', this.category).then(function (response) {
+            axios.post('/api/category/create', {
+                'name': this.category.name,
+                'amount': this.category.amount,
+                'budget_id': this.budget.id
+            }).then(function (response) {
                 _this.categories.push(_this.category);
             }).catch(function (error) {
                 /* console.log(error.response.data);
@@ -44272,7 +44302,24 @@ var render = function() {
             },
             [
               _c("input", {
-                attrs: { type: "hidden", name: "category_id", value: "1" }
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.budget.id,
+                    expression: "budget.id"
+                  }
+                ],
+                attrs: { type: "hidden", name: "budget_id" },
+                domProps: { value: _vm.budget.id },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.budget, "id", $event.target.value)
+                  }
+                }
               }),
               _vm._v(" "),
               _c("div", { staticClass: "modal-body" }, [

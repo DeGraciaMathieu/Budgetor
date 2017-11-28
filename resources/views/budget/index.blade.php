@@ -12,7 +12,7 @@
                 </ol>
                 <panels-info-budget :budget="budget"></panels-info-budget>
                 <panels-categories :categories="categories"></panels-categories>
-                <modals-create-category :budget="budget"></modals-create-category>
+                <modals-create-category :budget="budget" :categories="categories"></modals-create-category>
             </div>
         </div>
     </div>

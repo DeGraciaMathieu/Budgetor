@@ -7,7 +7,7 @@
                 <h4 class="modal-title" id="store-expense-label">Créer une categorie</h4>
             </div>
             <form v-on:submit.prevent="onSubmit" id='store_expense' role="form" method="post" action='http://budget.dev/expense/store'>
-                <input type='hidden' name='category_id' value='1'>
+                <input v-model="budget.id" type="hidden" name="budget_id">
                 <div class="modal-body">
                     <div v-if="errors && errors.length">
                         <div class="alert alert-danger">
@@ -38,7 +38,7 @@
 </template>
 <script>
 export default {
-	props: ['categories'],
+	props: ['budget', 'categories'],
     data(){
         return{
             category: {},
@@ -48,7 +48,11 @@ export default {
     methods: {
         onSubmit: function()
         {    
-            axios.post('/api/category/create', this.category)
+            axios.post('/api/category/create', {
+                'name': this.category.name, 
+                'amount': this.category.amount, 
+                'budget_id': this.budget.id, 
+            })
             .then(response => {
                 this.categories.push(this.category);
             })
