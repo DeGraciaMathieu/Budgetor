@@ -20,8 +20,11 @@ class ShowBudgetResponse implements Responsable
 
     protected function transformDatas() :array
     {
-        return $this->budget->toArray() + [
-            'amount' => $this->budget->categories->sum('amount')
+        return [
+            'budget' => $this->budget->only(['id', 'name', 'started_at', 'ended_at']) + [
+                'amount' => $this->budget->categories->sum('amount'),
+            ],
+            'categories' => $this->budget->categories(),
         ];
     }
 }

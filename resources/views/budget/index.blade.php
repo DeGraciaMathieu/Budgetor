@@ -8,10 +8,11 @@
                 <ol class="breadcrumb">
                   <li><a href="/">Home</a></li>
                   <li><a href="#">Budgets</a></li>
-                  <li class="active">...</li>
+                  <li class="active">@{{ budget.name }}</li>
                 </ol>
                 <panels-info-budget :budget="budget"></panels-info-budget>
                 <panels-categories :categories="categories"></panels-categories>
+                <modals-create-category :budget="budget"></modals-create-category>
             </div>
         </div>
     </div>
@@ -33,7 +34,8 @@ new Vue({
         fetchData: function()
         {
             axios.get(`/api/budget/12`).then(response => {
-                this.budget = response.data;
+                this.budget = response.data.budget;
+                this.categories = response.data.categories;
             })
             .catch(e => {});
         },

@@ -19,6 +19,7 @@ window.Vue = require('vue');
 // Vue.component('notification', require('./components/Notification.vue'));
 
 Vue.component('modals-create-budget', require('./components/modals/create-budget.vue'));
+Vue.component('modals-create-category', require('./components/modals/create-category.vue'));
 // Vue.component('list-budgets', require('./components/ListBudgets.vue'));
 
 Vue.component('list-budgets', require('./components/list-budgets.vue'));
