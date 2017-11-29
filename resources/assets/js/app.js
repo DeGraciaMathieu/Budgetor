@@ -30,6 +30,9 @@ Vue.component('panels-info-budget', require('./components/panels/infos-budget.vu
 Vue.component('pages-list-budgets', require('./pages/list-budgets.vue'));
 Vue.component('pages-show-budget', require('./pages/show-budget.vue'));
 
+Vue.component('elements-progress-bar', require('./components/elements/progress-label.vue'));
+
+
 // window.onload = function () {
 // 	const app = new Vue({
 // 	    el: '#app'

@@ -22,8 +22,8 @@
                     <tr v-for="category in categories">
                         <td>{{ category.name }}</td>
                         <td>{{ category.amount }}</td>
-                        <td></td>
-                        <td></td>
+                        <td>0</td>
+                        <td><elements-progress-bar :value="completion"></elements-progress-bar></td>
                         <td></td>
                     </tr>
                 </tbody>
@@ -31,7 +31,8 @@
         </div>    
     </div>
     <div class="panel-footer">
-        <button type="button" class="btn btn-primary btn-sd" data-toggle="modal" data-target="#store-category">Créer une categorie</button>
+        <button type="button" class="btn btn-primary btn-sd" data-toggle="modal" data-target="#store-category">Créer une categorie</button>        
+        <button type="button" class="btn btn-primary btn-sd" data-toggle="modal" data-target="#store-category">Créer une dépense</button>
     </div>
 </div>
 </template>
@@ -43,5 +44,10 @@ export default {
         return{
         }
     },
+    computed: {
+        completion: function () {
+            return 10;
+        }
+    }      
 }
 </script>
