@@ -5,27 +5,20 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                <ol class="breadcrumb">
-                  <li><a href="/">Home</a></li>
-                  <li><a href="#">Budgets</a></li>
-                  <li class="active">@{{ budget.name }}</li>
-                </ol>
-                <panels-info-budget :budget="budget" :categories="categories"></panels-info-budget>
-                <panels-categories :categories="categories"></panels-categories>
-                <modals-create-category :budget="budget" :categories="categories"></modals-create-category>
+                <panels-budgets :budgets="budgets"></panels-budgets>
             </div>
         </div>
     </div>
+    <modals-create-budget :budgets="budgets"></modals-create-budget>
 </div>
 <script>
 new Vue({
     el: '#app', 
     data(){
         return{
-            budget: [],
-            categories: [],
+            budgets: [],
         }
-    },    
+    },
     created: function()
     {
         this.fetchData();
@@ -33,13 +26,12 @@ new Vue({
     methods: {
         fetchData: function()
         {
-            axios.get(`/api/budget/12`).then(response => {
-                this.budget = response.data.budget;
-                this.categories = response.data.categories;
+            axios.get(`/api/budget/all`).then(response => {
+                this.budgets = response.data;
             })
             .catch(e => {});
         },
-    }     
+    }    
 });
 </script>
 @endsection
