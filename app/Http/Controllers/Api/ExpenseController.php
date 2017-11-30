@@ -14,7 +14,7 @@ class ExpenseController extends Controller
         $this->middleware('auth');
     }
 
-    public function create(Requests\StoreCategoryRequest $request)
+    public function create(Requests\StoreExpenseRequest $request)
     {
         $expense = new Models\Expense($request->only(['name','amount','comment','paid_at']));
 
