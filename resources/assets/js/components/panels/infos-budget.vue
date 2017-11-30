@@ -23,6 +23,9 @@
             </tbody>
         </table>
     </div>
+    <div class="panel-footer">
+        <button type="button" class="btn btn-success btn-sd" data-toggle="modal" data-target="#edit-budget">Editer budget</button>        
+    </div>    
 </div>
 </template>
 

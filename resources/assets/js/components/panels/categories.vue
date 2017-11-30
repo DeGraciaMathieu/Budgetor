@@ -20,9 +20,9 @@
                 </thead>
                 <tbody>
                     <tr v-for="category in categories">
-                        <td>{{ category.name }}</td>
+                        <td><a :href="'/category/' + category.id">{{ category.name }}</a></td>
                         <td>{{ category.amount }}</td>
-                        <td>0</td>
+                        <td>{{ spent }}</td>
                         <td><elements-progress-bar :value="completion"></elements-progress-bar></td>
                         <td></td>
                     </tr>
@@ -32,7 +32,7 @@
     </div>
     <div class="panel-footer">
         <button type="button" class="btn btn-primary btn-sd" data-toggle="modal" data-target="#store-category">Créer une categorie</button>        
-        <button type="button" class="btn btn-primary btn-sd" data-toggle="modal" data-target="#store-category">Créer une dépense</button>
+        <button type="button" class="btn btn-primary btn-sd" data-toggle="modal" data-target="#store-quickly-expense">Créer une dépense rapide</button>
     </div>
 </div>
 </template>
@@ -47,7 +47,11 @@ export default {
     computed: {
         completion: function () {
             return 10;
-        }
+        },
+        spent: function(category) {
+            return 0;
+
+        },
     }      
 }
 </script>

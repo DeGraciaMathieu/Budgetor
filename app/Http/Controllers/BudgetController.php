@@ -21,9 +21,9 @@ class BudgetController extends Controller
         return view('budget.index');   
     } 
 
-    public function show(Request $request)
+    public function show(Request $request, $id)
     {
-        return view('budget.show');
+        return view('budget.show', ['id' => $id]);
     }
 
     public function edit(Request $request)

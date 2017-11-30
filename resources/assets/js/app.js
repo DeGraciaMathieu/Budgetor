@@ -32,6 +32,8 @@ Vue.component('pages-show-budget', require('./pages/show-budget.vue'));
 
 Vue.component('elements-progress-bar', require('./components/elements/progress-label.vue'));
 
+Vue.component('modals-create-quickly-expense', require('./components/modals/create-quickly-expense.vue'));
+
 
 // window.onload = function () {
 // 	const app = new Vue({

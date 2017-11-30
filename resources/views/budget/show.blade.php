@@ -13,6 +13,7 @@
                 <panels-info-budget :budget="budget" :categories="categories"></panels-info-budget>
                 <panels-categories :categories="categories"></panels-categories>
                 <modals-create-category :budget="budget" :categories="categories"></modals-create-category>
+                <modals-create-quickly-expense :budget="budget" :categories="categories"></modals-create-quickly-expense>
             </div>
         </div>
     </div>
