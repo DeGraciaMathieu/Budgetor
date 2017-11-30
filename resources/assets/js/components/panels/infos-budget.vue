@@ -39,8 +39,8 @@ export default {
     computed: {
         allAmount: function () {
             var amount = 0;
-            for (var i = this.categories.length - 1; i >= 0; i--) {
-                amount = amount + parseInt(this.categories[i].amount);
+            for (var i = this.earnings.length - 1; i >= 0; i--) {
+                amount = amount + parseInt(this.earnings[i].amount);
             }
             return amount;
         }

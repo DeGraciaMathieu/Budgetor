@@ -43,7 +43,7 @@
 </template>
 <script>
 export default {
-	props: ['earnings'],
+	props: ['budget', 'earnings'],
     data(){
         return{
             earning: {},
@@ -53,7 +53,12 @@ export default {
     methods: {
         onSubmit: function()
         {    
-            axios.post('/api/earning/create', this.earning)
+            axios.post('/api/earning/create', {
+                'name': this.earning.name, 
+                'amount': this.earning.amount, 
+                'comment': this.earning.comment,                 
+                'budget_id': this.budget.id,                 
+            })
             .then(response => {
                 this.earnings.push(this.earning);
             })

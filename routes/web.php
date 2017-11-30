@@ -49,3 +49,4 @@ Route::get('api/budget/{id}', 'Api\BudgetController@show');
 Route::post('api/budget/create', 'Api\BudgetController@create');
 Route::post('api/category/create', 'Api\CategoryController@create');
 Route::post('api/expense/create', 'Api\ExpenseController@create');
+Route::post('api/earning/create', 'Api\EarningController@create');

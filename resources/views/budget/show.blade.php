@@ -11,7 +11,7 @@
                   <li class="active">@{{ budget.name }}</li>
                 </ol>
                 <panels-info-budget :budget="budget" :categories="categories" :earnings="earnings"></panels-info-budget>
-                <panels-earnings :earnings="earnings"></panels-earnings>
+                <panels-earnings :budget="budget" :earnings="earnings"></panels-earnings>
                 <panels-categories :categories="categories"></panels-categories>
                 <modals-create-category :budget="budget" :categories="categories"></modals-create-category>
                 <modals-create-earning :budget="budget" :earnings="earnings"></modals-create-earning>

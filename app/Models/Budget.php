@@ -20,7 +20,7 @@ class Budget extends Model
 
     public function earnings()
     {
-        return $this->hasMany(Category::class, 'budget_id');
+        return $this->hasMany(Earning::class, 'budget_id');
     }
 
     public function stocks()
