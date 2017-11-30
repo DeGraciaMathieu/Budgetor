@@ -18,6 +18,7 @@ class CreateEarningsTable extends Migration
             $table->integer('budget_id')->unsigned();
             $table->text('name');
             $table->integer('amount');
+            $table->text('comment')->nullable();
             $table->softDeletes();          
             $table->timestamps();
         });

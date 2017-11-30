@@ -24,6 +24,7 @@ class ShowBudgetResponse implements Responsable
             'budget' => $this->budget->only(['id', 'name', 'started_at', 'ended_at']) + [
                 'amount' => $this->budget->categories->sum('amount'),
             ],
+            'earnings' => $this->budget->earnings->toArray(),
             'categories' => $this->budget->categories->toArray(),
         ];
     }

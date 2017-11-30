@@ -31,7 +31,7 @@
 
 <script>
 export default {
-	props: ['budget', 'categories'],
+	props: ['budget', 'categories', 'earnings'],
     data(){
         return{
         }

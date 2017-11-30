@@ -18,6 +18,11 @@ class Budget extends Model
         return $this->hasMany(Category::class, 'budget_id');
     }
 
+    public function earnings()
+    {
+        return $this->hasMany(Category::class, 'budget_id');
+    }
+
     public function stocks()
     {
         return $this->hasMany(Stock::class);

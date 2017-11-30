@@ -10,9 +10,11 @@
                   <li><a href="#">Budgets</a></li>
                   <li class="active">@{{ budget.name }}</li>
                 </ol>
-                <panels-info-budget :budget="budget" :categories="categories"></panels-info-budget>
+                <panels-info-budget :budget="budget" :categories="categories" :earnings="earnings"></panels-info-budget>
+                <panels-earnings :earnings="earnings"></panels-earnings>
                 <panels-categories :categories="categories"></panels-categories>
                 <modals-create-category :budget="budget" :categories="categories"></modals-create-category>
+                <modals-create-earning :budget="budget" :earnings="earnings"></modals-create-earning>
                 <modals-create-quickly-expense :budget="budget" :categories="categories"></modals-create-quickly-expense>
             </div>
         </div>
@@ -24,6 +26,7 @@ new Vue({
     data(){
         return{
             budget: [],
+            earnings: [],
             categories: [],
         }
     },    
@@ -36,6 +39,7 @@ new Vue({
         {
             axios.get('/api/budget/{{$id}}').then(response => {
                 this.budget = response.data.budget;
+                this.earnings = response.data.earnings;
                 this.categories = response.data.categories;
             })
             .catch(e => {});
